@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { NgDatepickerModule } from '../ng-datepicker/module/ng-datepicker.module';
+
 import { AppComponent } from './app.component';
-import { DatePickerModule } from '../../ng2-datepicker';
 
 @NgModule({
   declarations: [
@@ -10,9 +10,9 @@ import { DatePickerModule } from '../../ng2-datepicker';
   ],
   imports: [
     BrowserModule,
-    CommonModule,
-    DatePickerModule
+    NgDatepickerModule
   ],
-  bootstrap: [ AppComponent ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

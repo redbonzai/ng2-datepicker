@@ -1,5 +1,5 @@
-aot/
+dist-app/
+node_modules/
 .DS_Store
-scripts/
 src/
-!src/ng2-datepicker/**/*
+e2e/

@@ -1,31 +1,24 @@
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
+import { NgDatepickerModule } from '../ng-datepicker/module/ng-datepicker.module';
 import { AppComponent } from './app.component';
 
-describe('greeting component', () => {
-  beforeEach(() => {
+describe('AppComponent', () => {
+
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent]
-    });
-    TestBed.compileComponents();
-  });
-
-  it('should have title `app works!`', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-
-    expect(compiled.innerHTML).toContain('app works!');
-    expect(compiled.querySelector('h1').innerHTML).toContain('app works!');
+      declarations: [
+        AppComponent
+      ],
+      imports: [
+        NgDatepickerModule
+      ]
+    }).compileComponents();
   }));
 
-  it('should change title to `app really works!`', async(() => {
+  it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    fixture.debugElement.componentInstance.title = 'app really works!';
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-
-    expect(compiled.querySelector('h1').innerHTML).not.toContain('app works!');
-    expect(compiled.querySelector('h1').innerHTML).toContain('app really works!');
+    const app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
   }));
+
 });
